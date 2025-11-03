@@ -2,5 +2,5 @@
 size=$(df -h. | tail -1 | awk '{print $5}' | sed 's/%//g')
 if [ "$size" -gt 17 ];then
 echo "Disk usage is reached 90 percent please clean it" > percent
-#mail -s "disk usage alert" -c "veeraz@gmail.com" < percent
+mail -s "disk usage alert" -c "veeraz@gmail.com" < percent
 fi
